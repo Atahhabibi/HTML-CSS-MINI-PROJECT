@@ -258,67 +258,122 @@ Navbar
 ===============
 */
 
-.navbar{
-  width: 100vw;
+nav{
   background:var(--white);
-  display: grid;
-  grid-template-columns: 1fr auto ;
-  align-items: center;
-  box-shadow: var(--shadow-3);
-  padding-top: 1rem;
-  padding-right: 1rem;
-  overflow: hidden;
-  transition: var(--transition);
-
+  box-shadow: var(--shadow-2);
+  line-height: 1;
 }
 
-.navbar h2{
+.nav-header{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  padding: 1rem;
+}
+
+.nav-toggle{
+  font-size: 1.5rem;
+  color: var(--primary-500);
+  background:transparent;
+  border-color: transparent;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.nav-toggle:hover{
+ transform: rotate(90deg);
+}
+
+.logo{
   margin-bottom: 0;
-  margin-left:1rem ;
+  font-weight: 700;
+}
+
+.logo span{
+  color: var(--primary-500);
 }
 
 .social-icons{
- display: none;
+  display: none;
 }
 
-.links{
- height: 0;
- transition: var(--transition);
-}
-
-.show-links{
-  height: auto;
-}
-
-.link{
+.links a{
   display: block;
-  font-size:1.3rem;
-  color: var(--black);
-  margin-bottom:0.5rem;
-  padding:0.5rem;
-  padding-left: 1rem;
+  color: var(--grey-700);
+  font-size: 1rem;
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+  padding: 0.75rem 1rem;
   transition: var(--transition);
 }
 
-.link:hover{
-  color: var(--primary-500);
+.links a:hover{
   background:var(--primary-300);
-  padding-left: 2rem;
-}
-
-
-
-
-.nav-toggle{
-  background:transparent;
-  border:transparent;
-  font-size: 2rem;
   color: var(--primary-500);
+  padding-left: 1.5rem;
 
 }
 
-.navbar h2 span{
-  color: var(--primary-500);
-  font-weight: bold;
+.links{
+  margin: 0;
+  height:0;
+  overflow: hidden;
+  transition: var(--transition);
 }
 
+.show-links{
+  height:160px;
+}
+
+
+@media screen and (min-width:800px){
+  .nav-toggle{
+    display: none;
+  }
+
+  .nav-header{
+    padding:0;
+  }
+
+  .social-icons{
+   display: flex;
+
+  }
+
+  .social-icons a{
+    margin: 0 0.5rem;
+    color: var(--primary-500);
+    transition: var(--transition);
+  }
+
+  .social-icons a:hover{
+    color: var(--primary-300);
+  }
+
+  .links{
+    display: flex;
+    height: auto;
+  }
+
+  .links a{
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+
+  .links a:hover{
+    padding: 0;
+    background:transparent;
+  }
+
+  .nav-center{
+    max-width:var(--max-width) ;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+
+  
+}
